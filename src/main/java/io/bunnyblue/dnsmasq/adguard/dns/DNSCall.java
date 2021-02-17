@@ -41,7 +41,7 @@ public class DNSCall implements Callable<String> {
                 //  System.out.println(host + " pass " + count.get());
                 if (addresses.length > 0) {
                     DNSCacher.update(address);
-                    System.out.println("🎉 Pass " + address);
+                    System.out.println("🎉 Pass <<<<<<<<<" + address);
                     return address;
                 }
             } catch (UnknownHostException e) {
@@ -49,7 +49,7 @@ public class DNSCall implements Callable<String> {
 
             }
         }
-        System.err.println(host + " 失Failed " + count.get() + " ");
+        System.err.println(host + "  " + count.get() + ">>>>Failed ");
 
         return null;
     }
