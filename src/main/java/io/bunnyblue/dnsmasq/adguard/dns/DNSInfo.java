@@ -15,7 +15,7 @@ public class DNSInfo implements Serializable {
     }
 
     public boolean vaild(){
-        return System.currentTimeMillis()<timestamp+(1000*3600*24*30L);
+        return System.currentTimeMillis()<timestamp+(1000*3600*24*15L);
     }
 
     @Override

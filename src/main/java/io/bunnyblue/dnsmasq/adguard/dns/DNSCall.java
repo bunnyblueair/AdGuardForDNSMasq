@@ -22,6 +22,7 @@ public class DNSCall implements Callable<String> {
 
         count.addAndGet(1);
         if (DNSCacher.hasCached(address)) {
+            System.out.println("🍻 used cache  "+address);
             return address;
         }
 
@@ -40,7 +41,7 @@ public class DNSCall implements Callable<String> {
                 //  System.out.println(host + " pass " + count.get());
                 if (addresses.length > 0) {
                     DNSCacher.update(address);
-                    System.out.println("tested " + address);
+                    System.out.println("🎉 Pass " + address);
                     return address;
                 }
             } catch (UnknownHostException e) {
@@ -48,7 +49,7 @@ public class DNSCall implements Callable<String> {
 
             }
         }
-        System.err.println(host + " failed " + count.get() + " ");
+        System.err.println(host + " 失Failed " + count.get() + " ");
 
         return null;
     }
