@@ -75,6 +75,7 @@ public class DNSGuardFilter {
                 "address=/p3p.mmstat.com/",
                 "address=/res.mmstat.com/",
                 "address=/wgo.mmstat.com/",
+                "address=/.douban.com/",
                 "address=/yt.mmstat.com/");
     }
 }
