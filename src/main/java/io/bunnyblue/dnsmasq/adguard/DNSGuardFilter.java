@@ -59,6 +59,7 @@ public class DNSGuardFilter {
 
         }
         purged.addAll(prebuild());
+                System.out.println(">>>>>>append prebuild ==="+prebuild());
         FileUtils.writeLines(new File("adguard-dnsmasq.conf"), purged);
         System.out.println(">>>>>>rebuild filter and wrote to dguard-dnsmasq.conf");
     }
