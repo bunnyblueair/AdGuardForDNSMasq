@@ -78,7 +78,7 @@ public class DNSGuardFilter {
                 "address=/.douban.com/",
                 "address=/yt.mmstat.com/",
                 "address=/.gzads.com/",
-                 "address=/.gozendata.com/"
+                 "address=/.gozendata.com/",
                  "address=/.gz-data.com/");
 
 
