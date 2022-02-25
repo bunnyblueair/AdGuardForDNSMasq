@@ -60,6 +60,10 @@ public class DomainFilter {
                 e.printStackTrace();
             }
         }
+    
+        list.add("address=/.gzads.com/");
+        list.add("address=/.gozendata.com/");
+        list.add("address=/.gz-data.com/");
 
         try {
             FileUtils.writeLines(new File("adguard-dnsmasq2.conf"), list);
