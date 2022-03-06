@@ -32,7 +32,7 @@ public class DNSGuardFilter {
     public static void main(String[] args) throws IOException {
         System.out.println(">>>>>>rebuild filter...");
         ArrayList<String> purged = new ArrayList<>();
-        File filter = new File("filter.txt");
+        File filter = new File("builder/filter.txt");
         Collection<String> hosts = FileUtils.readLines(filter);
         for (String domain :
                 hosts) {
@@ -60,8 +60,8 @@ public class DNSGuardFilter {
         }
         purged.addAll(prebuild());
                 System.out.println(">>>>>>append prebuild ==="+prebuild());
-        FileUtils.writeLines(new File("adguard-dnsmasq.conf"), purged);
-        System.out.println(">>>>>>rebuild filter and wrote to dguard-dnsmasq.conf");
+        FileUtils.writeLines(new File("builder/adguard-dnsmasq-raw.conf"), purged);
+        System.out.println(">>>>>>rebuild filter and wrote to builder/adguard-dnsmasq-raw.conf");
     }
 
     public static List<String> prebuild() {

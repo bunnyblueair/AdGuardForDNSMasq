@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class DNSCacher {
-    public static final String CACHE="dns_cache.dat";
+    public static final String CACHE="builder/dns_cache.dat";
   static HashSet<DNSInfo> dnsInfos=new HashSet<>();
     public static void init(){
         try {

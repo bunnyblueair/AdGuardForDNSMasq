@@ -22,7 +22,7 @@ public class DomainFilter {
         ArrayList<String> list = new ArrayList<>();
         Collection<String> hosts = null;
         try {
-            hosts = FileUtils.readLines(new File("adguard-dnsmasq.conf"));
+            hosts = FileUtils.readLines(new File("builder/adguard-dnsmasq-raw.conf"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class DomainFilter {
         list.add("address=/wxsnsdythumb.wxs.qq.com");
 
         try {
-            FileUtils.writeLines(new File("adguard-dnsmasq2.conf"), list);
+            FileUtils.writeLines(new File("adguard-dnsmasq-dist.conf"), list);
         } catch (IOException e) {
             e.printStackTrace();
         }
