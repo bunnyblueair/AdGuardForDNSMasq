@@ -44,7 +44,9 @@ jobs:
           architecture: x64 # (x64 or x86) - defaults to x64
       
       - name: Build with Gradle
-      - run:  ./gradlew builder:fatJar
+        uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
+        with:
+          arguments: builder:fatJar
       - run: wget https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt 
       - run: java -jar builder/build/libs/builder-all-1.0.jar
       - run: git status 
