@@ -65,6 +65,7 @@ public class DomainFilter {
         list.add("address=/.gozendata.com/");
         list.add("address=/.gz-data.com/");
         list.add("address=/wxsnsdy.wxs.qq.com/");
+        list.add("address=/wxsnsdythumb.wxs.qq.com");
 
         try {
             FileUtils.writeLines(new File("adguard-dnsmasq2.conf"), list);
