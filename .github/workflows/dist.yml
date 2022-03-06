@@ -47,7 +47,7 @@ jobs:
         uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
         with:
           arguments: builder:fatJar
-      - run: wget https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt  -o builder/filter.txt
+      - run: wget https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt  -P builder
       - run: java -jar builder/build/libs/builder-all-1.0.jar
       - run: git status 
       - run: git config --local user.email ${{ secrets.email }}
