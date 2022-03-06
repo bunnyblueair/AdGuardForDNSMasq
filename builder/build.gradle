@@ -4,6 +4,8 @@ plugins {
     id 'java'
 
 }
+configurations.implementation.setCanBeResolved(true)
+// configurations.api.setCanBeResolved(true)
 
 group 'io.bunnyblue.dnsmasq'
 version '1.0'
@@ -31,7 +33,7 @@ dependencies {
 }
 task fatJar(type: Jar) {
     baseName = project.name + '-all'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    from { configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
     manifest {
         attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
