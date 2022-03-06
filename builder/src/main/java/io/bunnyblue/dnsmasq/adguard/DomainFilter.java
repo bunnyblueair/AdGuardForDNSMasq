@@ -68,8 +68,10 @@ public class DomainFilter {
         list.add("address=/wxsnsdythumb.wxs.qq.com");
 
         try {
-            FileUtils.writeLines(new File("adguard-dnsmasq-dist.conf"), list);
+            FileUtils.writeLines(new File("dist/adguard-dnsmasq-dist.conf"), list);
+            System.out.println("write to dist/adguard-dnsmasq-dist.conf");
         } catch (IOException e) {
+            
             e.printStackTrace();
         }
         //  FileUt
