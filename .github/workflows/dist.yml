@@ -1,0 +1,57 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "1 1 * * *"
+  push:
+    branches:
+      - master
+  create:
+    tags:
+      - v*
+  # Triggers the workflow on push or pull request events but only for the main branch
+#  push:
+ #   branches: [ master ]
+#   pull_request:
+#     branches: [ master ]
+
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-20.04
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+         ref: main
+
+      # Runs a single command using the runners shell
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '8.0.232' # The JDK version to make available on the path.
+          java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+          architecture: x64 # (x64 or x86) - defaults to x64
+      
+
+      - run: ./gradlew builder:fatJar
+      - run: wget https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt 
+      - run: java -jar builder/build/libs/builder-all-1.0.jar
+      - run: git status 
+      - run: git config --local user.email ${{ secrets.email }}
+      - run: git config --local user.name ${{ secrets.username }}
+      - run: git add dist/adguard-dnsmasq-dist.conf build/dns_cache.dat
+      - run: git commit -m "update dist"
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
