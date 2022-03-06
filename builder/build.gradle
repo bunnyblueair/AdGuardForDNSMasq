@@ -1,0 +1,40 @@
+
+
+plugins {
+    id 'java'
+
+}
+
+group 'io.bunnyblue.dnsmasq'
+version '1.0'
+
+sourceCompatibility = 1.8
+//apply plugin: "name.remal.fat-jar"
+repositories {
+    mavenLocal()
+    maven{
+        url="https://maven.aliyun.com/nexus/content/groups/public/"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+////    compileOnly 'org.projectlombok:lombok:1.18.10'
+////    compile 'net.java.dev.jna:jna:5.6.0'
+////    compile 'net.java.dev.jna:jna-platform:5.6.0'
+////    compile 'org.bouncycastle:bcprov-jdk15on:1.66'
+////    compile 'org.slf4j:slf4j-api:1.7.30'
+////    compileOnly 'org.projectlombok:lombok:1.18.10'
+//    compile 'dnsjava:dnsjava:3.3.1'
+}
+task fatJar(type: Jar) {
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+        attributes 'Main-Class': 'io.bunnyblue.dnsmasq.adguard.Main'
+    }
+}

@@ -1,0 +1,68 @@
+diff --git a/src/dnsmasq.c b/src/dnsmasq.c
+index a2e1796..da33b7b 100644
+--- a/src/dnsmasq.c
++++ b/src/dnsmasq.c
+@@ -18,7 +18,7 @@
+ #define DNSMASQ_COMPILE_OPTS
+ 
+ #include "dnsmasq.h"
+-
++__asm__(".symver fcntl64,fcntl@GLIBC_2.17");
+ struct daemon *daemon;
+ 
+ static volatile pid_t pid = 0;
+diff --git a/src/helper.c b/src/helper.c
+index e6d97ce..4f5ea81 100644
+--- a/src/helper.c
++++ b/src/helper.c
+@@ -15,7 +15,7 @@
+ */
+ 
+ #include "dnsmasq.h"
+-
++__asm__(".symver fcntl64,fcntl@GLIBC_2.17");
+ #ifdef HAVE_SCRIPT
+ 
+ /* This file has code to fork a helper process which receives data via a pipe 
+diff --git a/src/log.c b/src/log.c
+index 0f6f88f..43d5564 100644
+--- a/src/log.c
++++ b/src/log.c
+@@ -15,7 +15,7 @@
+ */
+ 
+ #include "dnsmasq.h"
+-
++__asm__(".symver fcntl64,fcntl@GLIBC_2.17");
+ #ifdef __ANDROID__
+ #  include <android/log.h>
+ #endif
+diff --git a/src/netlink.c b/src/netlink.c
+index 0494070..da71f55 100644
+--- a/src/netlink.c
++++ b/src/netlink.c
+@@ -15,9 +15,10 @@
+ */
+ 
+ #include "dnsmasq.h"
+-
++__asm__(".symver fcntl64,fcntl@GLIBC_2.17");
+ #ifdef HAVE_LINUX_NETWORK
+ 
++
+ #include <linux/types.h>
+ #include <linux/netlink.h>
+ #include <linux/rtnetlink.h>
+diff --git a/src/network.c b/src/network.c
+index 6cf15a9..9198525 100644
+--- a/src/network.c
++++ b/src/network.c
+@@ -15,7 +15,7 @@
+ */
+ 
+ #include "dnsmasq.h"
+-
++__asm__(".symver fcntl64,fcntl@GLIBC_2.17");
+ #ifdef HAVE_LINUX_NETWORK
+ 
+ int indextoname(int fd, int index, char *name)
