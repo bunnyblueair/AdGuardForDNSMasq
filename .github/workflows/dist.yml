@@ -26,24 +26,25 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-         ref: main
+         ref: master
 
       # Runs a single command using the runners shell
-      - uses: actions/setup-java@v1
+      - name: Set up JDK 8
+        uses: actions/setup-java@v1
         with:
           java-version: '8.0.232' # The JDK version to make available on the path.
           java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
           architecture: x64 # (x64 or x86) - defaults to x64
       
-
-      - run: cd AdGuardForDNSMasq && ./gradlew builder:fatJar
+      - name: Build with Gradle
+      - run:  ./gradlew builder:fatJar
       - run: wget https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt 
       - run: java -jar builder/build/libs/builder-all-1.0.jar
       - run: git status 
