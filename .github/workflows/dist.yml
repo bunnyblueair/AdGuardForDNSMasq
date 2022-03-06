@@ -43,7 +43,7 @@ jobs:
           architecture: x64 # (x64 or x86) - defaults to x64
       
 
-      - run: ./gradlew builder:fatJar
+      - run: cd AdGuardForDNSMasq && ./gradlew builder:fatJar
       - run: wget https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt 
       - run: java -jar builder/build/libs/builder-all-1.0.jar
       - run: git status 
