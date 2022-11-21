@@ -78,8 +78,8 @@ public class DNSGuardFilter {
                 "address=/wgo.mmstat.com/",
                 "address=/.58.com/",
                 "address=/.ganjin.com/",
-                "address=/2.taobao.com/“,
-                "address=/.goofish.com/",
+                 "address=/.goofish.com/",
+                "address=/2.taobao.com/",
                 "address=/yt.mmstat.com/");
 
 
