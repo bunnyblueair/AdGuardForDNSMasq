@@ -16,7 +16,10 @@ public class DNSGuardFilter {
         whiteList.add("gstatic.com");
         whiteList.add("mmstat.com");
     }
-
+    private static boolean isRootDomain(String address) {
+        return address.indexOf(".") == address.lastIndexOf(".");
+    }
+    
     public static boolean ignore(String domain) {
         for (String root :
                 whiteList) {
@@ -52,8 +55,12 @@ public class DNSGuardFilter {
                 if (newDom.contains("*")) {
                     System.err.println(newDom);
                 } else {
+                    if(isRootDomain(newDom)){
+                      purged.add(String.format("address=/.%s/", newDom));
+                    }else{
+                     purged.add(String.format("address=/%s/", newDom));}
 
-                    purged.add(String.format("address=/.%s/", newDom));
+                    
                 }
             }
 
