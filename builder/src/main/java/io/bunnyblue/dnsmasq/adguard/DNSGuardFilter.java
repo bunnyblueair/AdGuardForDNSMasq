@@ -88,6 +88,14 @@ public class DNSGuardFilter {
                 "address=/.goofish.com/",
                 "address=/.zhuanzhuan.com/",
                 "address=/2.taobao.com/",
+                "address=/adash.m.taobao.com/",
+                "address=/adashx.ut.youku.com/",
+                "address=/adashx4yt.m.taobao.com/",
+                "address=/yk-ssp-ad.cp31.ott.cibntv.net/",
+                "address=/ykad-data.cp31.ott.cibntv.net/",
+                "address=/yk-ssp.ad.youku.com/",
+                "address=/ykad-data.youku.com/",
+                "address=/ykugc.cp31.ott.cibntv.net/",
                 "address=/yt.mmstat.com/");
 
 
