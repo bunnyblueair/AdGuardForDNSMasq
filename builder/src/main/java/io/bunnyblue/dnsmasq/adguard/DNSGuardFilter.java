@@ -65,10 +65,17 @@ public class DNSGuardFilter {
             }
 
         }
+        purged.addAll(loadYouKu());
         purged.addAll(prebuild());
                 System.out.println(">>>>>>append prebuild ==="+prebuild());
         FileUtils.writeLines(new File("builder/adguard-dnsmasq-raw.conf"), purged);
         System.out.println(">>>>>>rebuild filter and wrote to builder/adguard-dnsmasq-raw.conf");
+    }
+    
+    public static List<String> loadYouKu() {
+         File filter = new File("builder/youku.txt");
+        Collection<String> hosts = FileUtils.readLines(filter);
+        return hosts;
     }
 
     public static List<String> prebuild() {
@@ -88,14 +95,6 @@ public class DNSGuardFilter {
                 "address=/.goofish.com/",
                 "address=/.zhuanzhuan.com/",
                 "address=/2.taobao.com/",
-                "address=/adash.m.taobao.com/",
-                "address=/adashx.ut.youku.com/",
-                "address=/adashx4yt.m.taobao.com/",
-                "address=/yk-ssp-ad.cp31.ott.cibntv.net/",
-                "address=/ykad-data.cp31.ott.cibntv.net/",
-                "address=/yk-ssp.ad.youku.com/",
-                "address=/ykad-data.youku.com/",
-                "address=/ykugc.cp31.ott.cibntv.net/",
                 "address=/yt.mmstat.com/");
 
 
