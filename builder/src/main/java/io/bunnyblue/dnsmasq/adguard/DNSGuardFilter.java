@@ -72,7 +72,7 @@ public class DNSGuardFilter {
         System.out.println(">>>>>>rebuild filter and wrote to builder/adguard-dnsmasq-raw.conf");
     }
     
-    public static List<String> loadYouKu() {
+    public static Collection<String> loadYouKu() {
          File filter = new File("builder/youku.txt");
         Collection<String> hosts = FileUtils.readLines(filter);
         return hosts;
