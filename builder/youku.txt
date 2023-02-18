@@ -33,6 +33,7 @@ address=/r.l.youku.com/127.0.0.1
 address=/s.p.youku.com/127.0.0.1
 address=/sdk.m.youku.com/127.0.0.1
 address=/stat.youku.com/127.0.0.1
+address=/applog.uc.cn/127.0.0.1
 address=/statis.api.3g.youku.com/127.0.0.1
 address=/store.tv.api.3g.youku.com/127.0.0.1
 address=/store.xl.api.3g.youku.com/127.0.0.1
