@@ -80,6 +80,7 @@ public class DNSGuardFilter {
 
     public static List<String> prebuild() {
         return Arrays.asList("address=/cnzz.mmstat.com/",
+                "address=/.dutils.com/",
                 "address=/gj.mmstat.com/",
                 "address=/oneid.mmstat.com/",
                 "address=/ac.mmstat.com/",
