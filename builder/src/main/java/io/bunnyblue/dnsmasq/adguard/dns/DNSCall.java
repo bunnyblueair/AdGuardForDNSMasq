@@ -23,6 +23,14 @@ public class DNSCall implements Callable<String> {
             //patch 酷喵
             return address;
         }
+         if(address.contains(".umeng.com")||address.contains(".umengcloud.com")){
+            if(host.equals(".umeng.com")||host.equals(".umengcloud.com")){
+                return address;
+            }else{
+                return null;
+            }
+        }
+        
         count.addAndGet(1);
         if (DNSCacher.hasCached(address)) {
             System.out.println("🍻 used cache  "+address);
