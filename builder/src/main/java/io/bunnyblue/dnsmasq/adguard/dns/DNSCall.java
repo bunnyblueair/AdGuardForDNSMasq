@@ -19,7 +19,10 @@ public class DNSCall implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-
+        if(address.contains(".cibntv.net")||address.contains(".youku.com")){
+            //patch 酷喵
+            return address;
+        }
         count.addAndGet(1);
         if (DNSCacher.hasCached(address)) {
             System.out.println("🍻 used cache  "+address);
