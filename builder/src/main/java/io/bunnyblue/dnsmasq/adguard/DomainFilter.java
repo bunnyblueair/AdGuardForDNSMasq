@@ -30,7 +30,11 @@ public class DomainFilter {
         for (String data :
                 hosts) {
             if (data.startsWith("address=/")) {
-                String url = data.replaceAll("address=/", "").replaceAll("/", "");
+               
+                 String  url=  data.replaceAll("address=/", "");
+                if (url.indexOf("/")!=-1){
+                    url=url.substring(0,data.indexOf("/"));
+                }
                 DNSCall dnsCall = new DNSCall();
                 dnsCall.address = data;
                 dnsCall.host = url;
