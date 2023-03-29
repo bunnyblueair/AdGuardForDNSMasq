@@ -33,7 +33,7 @@ public class DomainFilter {
                
                  String  url=  data.replaceAll("address=/", "");
                 if (url.indexOf("/")!=-1){
-                    url=url.substring(0,data.indexOf("/"));
+                    url=url.substring(0,url.indexOf("/"));
                 }
                 DNSCall dnsCall = new DNSCall();
                 dnsCall.address = data;
