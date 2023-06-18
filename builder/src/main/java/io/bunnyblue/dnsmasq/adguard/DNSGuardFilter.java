@@ -82,6 +82,7 @@ public class DNSGuardFilter {
         return Arrays.asList("address=/cnzz.mmstat.com/",
                  "address=/.pki.plus/",    
                  "address=/.hi.cn",
+                "address=/.twlxxl.cn/",
                 "address=/.dutils.com/",
                 "address=/gj.mmstat.com/",
                 "address=/oneid.mmstat.com/",
