@@ -99,6 +99,7 @@ public class DNSGuardFilter {
                 "address=/.goofish.com/",
                 "address=/.zhuanzhuan.com/",
                 "address=/2.taobao.com/",
+                "address=/.hpplay.cn/",
                 "address=/yt.mmstat.com/");
 
 
