@@ -100,6 +100,8 @@ public class DNSGuardFilter {
                 "address=/.zhuanzhuan.com/",
                 "address=/2.taobao.com/",
                 "address=/.hpplay.cn/",
+                "address=/.hpplay.com.cn/",
+                "address=/.lebo.cn/",
                 "address=/yt.mmstat.com/");
 
 
