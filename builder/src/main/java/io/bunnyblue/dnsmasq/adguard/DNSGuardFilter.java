@@ -66,6 +66,7 @@ public class DNSGuardFilter {
 
         }
         purged.addAll(loadYouKu());
+        purged.addAll(loadXXMaHuaTeng());
         purged.addAll(prebuild());
                 System.out.println(">>>>>>append prebuild ==="+prebuild());
         FileUtils.writeLines(new File("builder/adguard-dnsmasq-raw.conf"), purged);
@@ -77,6 +78,12 @@ public class DNSGuardFilter {
         Collection<String> hosts = FileUtils.readLines(filter);
         return hosts;
     }
+        public static Collection<String> loadXXMaHuaTeng() throws IOException{
+         File filter = new File("builder/fxk_tencent.txt");
+        Collection<String> hosts = FileUtils.readLines(filter);
+        return hosts;
+    }
+    
 
     public static List<String> prebuild() {
         return Arrays.asList("address=/cnzz.mmstat.com/",
