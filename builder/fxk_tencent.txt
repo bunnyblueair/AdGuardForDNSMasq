@@ -1,0 +1,6 @@
+address=/.trace.qq.com/
+address=/browser.qq.com/
+address=/.imtt.qq.com/
+address=/.kandian.qq.com/
+address=/.quan.qq.com/
+address=/.ab.qq.com/
