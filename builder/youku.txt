@@ -54,3 +54,4 @@ address=/heyi-trade.cp12.ott.cibntv.net/127.0.0.1
 address=/cad.cp31.ott.cibntv.net/127.0.0.1
 address=/.umeng.com/127.0.0.1
 address=/.umengcloud.com/127.0.0.1
+address=/.mmstat.com/127.0.0.1
