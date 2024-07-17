@@ -109,6 +109,10 @@ public class DNSGuardFilter {
                 "address=/.hpplay.cn/",
                 "address=/.hpplay.com.cn/",
                 "address=/.lebo.cn/",
+                "address=/.bootcss.com/",
+                "address=/.bootcdn.net/",
+                "address=/.staticfile.net/",
+                "address=/.staticfile.org/",             
                 "address=/yt.mmstat.com/");
 
 
