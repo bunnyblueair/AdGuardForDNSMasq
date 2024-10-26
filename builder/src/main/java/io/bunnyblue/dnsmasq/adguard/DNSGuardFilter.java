@@ -112,7 +112,13 @@ public class DNSGuardFilter {
                 "address=/.bootcss.com/",
                 "address=/.bootcdn.net/",
                 "address=/.staticfile.net/",
-                "address=/.staticfile.org/",             
+                "address=/.staticfile.org/", 
+                "address=/dns.weibo.cn/",             
+                "address=/dns.weixin.qq.com/",    
+                "address=/dns.weixin.qq.com.cn/",  
+                "address=/httpdns.n.netease.com/", 
+                "address=/httpdns.alicdn.com", 
+                             
                 "address=/yt.mmstat.com/");
 
 
