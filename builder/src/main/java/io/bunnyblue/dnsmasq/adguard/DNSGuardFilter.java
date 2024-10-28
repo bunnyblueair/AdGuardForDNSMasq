@@ -117,7 +117,7 @@ public class DNSGuardFilter {
                 "address=/dns.weixin.qq.com/",    
                 "address=/dns.weixin.qq.com.cn/",  
                 "address=/httpdns.n.netease.com/", 
-                "address=/httpdns.alicdn.com", 
+                "address=/httpdns.alicdn.com/", 
                              
                 "address=/yt.mmstat.com/");
 
