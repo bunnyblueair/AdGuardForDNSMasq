@@ -7,3 +7,4 @@ address=/.ab.qq.com/
 address=/wxsnsdythumb.wxs.qq.com/
 address=/wxsnsdy.wxs.qq.com/
 address=/szextshort.weixin.qq.com/
+address=/wxa.wxs.qq.com/
