@@ -37,6 +37,6 @@ task fatJar(type: Jar) {
     with jar
     manifest {
         attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
-        attributes 'Main-Class': 'io.bunnyblue.dnsmasq.adguard.Main'
+        attributes 'Main-Class': 'io.bunnyblue.dnsmasq.adguardng.NewAdguardLauncher'
     }
 }

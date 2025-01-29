@@ -48,6 +48,10 @@ jobs:
         with:
           arguments: builder:fatJar
       - run: wget https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt  -P builder
+      - run: wget https://github.com/SagerNet/sing-geosite/raw/refs/heads/release/geosite.db
+      - run: wget https://github.com/SagerNet/sing-box/releases/download/v1.10.7/sing-box-1.10.7-linux-amd64.tar.gz && tar  -xvf sing-box-1.10.7-linux-amd64.tar.gz && mv sing-box-1.10.7-linux-amd64/sing-box sing-box
+      - run: ./sing-box  geosite   export  category-ads-all && mv geosite-category-ads-all.json builder/
+      - run: ./sing-box  geosite   export  geosite-category-httpdns-cn && mv geosite-category-httpdns-cn.json builder/
       - run: java -jar builder/build/libs/builder-all-1.0.jar
       - run: git status 
       - run: git config --local user.email ${{ secrets.email }}
