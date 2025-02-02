@@ -88,7 +88,7 @@ public class DNSGuardFilter {
     public static List<String> prebuild() {
         return Arrays.asList("address=/cnzz.mmstat.com/",
                  "address=/.pki.plus/",    
-                 "address=/.hi.cn",
+                 "address=/.hi.cn/",
                 "address=/.twlxxl.cn/",
                 "address=/.dutils.com/",
                 "address=/gj.mmstat.com/",
