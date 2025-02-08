@@ -33,12 +33,15 @@ private String filePath;
                 if (ruleObject.has("domain")) {
                     ruleObject.getJSONArray("domain").forEach(domain -> {
                         cacheLines.add(DNSMasqFormat.format(domain.toString()));
+                      //ipset=/.zzcloud.me/gfwlist
+                        cacheLines.add("ipset=/%s/ad_list".format(domain.toString()));
                     });
 
                 }
                 if (ruleObject.has("domain_suffix")) {
                     ruleObject.getJSONArray("domain_suffix").forEach(domain -> {
                         cacheLines.add(DNSMasqFormat.format(domain.toString()));
+                        cacheLines.add("ipset=/%s/ad_list".format(domain.toString()));
                     });
                 }
 
