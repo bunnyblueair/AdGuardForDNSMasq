@@ -34,14 +34,14 @@ private String filePath;
                     ruleObject.getJSONArray("domain").forEach(domain -> {
                         cacheLines.add(DNSMasqFormat.format(domain.toString()));
                         
-                        cacheLines.add(DNSMasqFormat.formatIpset(domain.toString()));
+                      //  cacheLines.add(DNSMasqFormat.formatIpset(domain.toString()));
                     });
 
                 }
                 if (ruleObject.has("domain_suffix")) {
                     ruleObject.getJSONArray("domain_suffix").forEach(domain -> {
                         cacheLines.add(DNSMasqFormat.format(domain.toString()));
-                        cacheLines.add(DNSMasqFormat.formatIpset(domain.toString()));
+                      //  cacheLines.add(DNSMasqFormat.formatIpset(domain.toString()));
                     });
                 }
 
