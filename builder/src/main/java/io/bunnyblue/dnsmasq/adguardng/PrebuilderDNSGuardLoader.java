@@ -53,7 +53,7 @@ public List<String> rebuild(){
     return  purged;
 }
         public static Collection<String> loadPCDN() throws IOException{
-         File filter = new File("builder/youku.txt");
+         File filter = new File("builder/pcdn.txt");
         Collection<String> hosts = FileUtils.readLines(filter);
         return hosts;
     }
