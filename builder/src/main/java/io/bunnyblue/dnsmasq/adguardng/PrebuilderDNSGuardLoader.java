@@ -44,9 +44,19 @@ public List<String> rebuild(){
     } catch (IOException e) {
         throw new RuntimeException(e);
     }
+    try {
+        purged.addAll(loadPCDN());
+    } catch (IOException e) {
+        throw new RuntimeException(e);
+    }
     purged.addAll(prebuild());
     return  purged;
 }
+        public static Collection<String> loadPCDN() throws IOException{
+         File filter = new File("builder/youku.txt");
+        Collection<String> hosts = FileUtils.readLines(filter);
+        return hosts;
+    }
     public static Collection<String> loadYouKu() throws IOException{
          File filter = new File("builder/youku.txt");
         Collection<String> hosts = FileUtils.readLines(filter);
