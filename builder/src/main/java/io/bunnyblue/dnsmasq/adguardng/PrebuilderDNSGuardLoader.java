@@ -102,6 +102,15 @@ public List<String> rebuild(){
                 "address=/dns.weixin.qq.com.cn/",  
                 "address=/httpdns.n.netease.com/", 
                 "address=/httpdns.alicdn.com/", 
+                 "address=/.v2ex.com/::", 
+                 "address=/.chatgpt.com/::", 
+                 "address=/.bsky.app/::", 
+                 "address=/.googlevideo.com/::", 
+                 "address=/.sheerid.com/::", 
+                 "address=/.openai.com/::", 
+                 "address=/.xdaforums.com/::", 
+                 "address=/.anthropic.com/::", 
+                 "address=/claude.ai/::", 
                 "address=/yt.mmstat.com/");
 
 
