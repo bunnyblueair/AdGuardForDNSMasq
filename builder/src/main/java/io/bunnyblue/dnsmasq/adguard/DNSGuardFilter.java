@@ -67,12 +67,18 @@ public class DNSGuardFilter {
         }
         purged.addAll(loadYouKu());
         purged.addAll(loadXXMaHuaTeng());
+        purged.addAll(loadDisney());
         purged.addAll(prebuild());
                 System.out.println(">>>>>>append prebuild ==="+prebuild());
         FileUtils.writeLines(new File("builder/adguard-dnsmasq-raw.conf"), purged);
         System.out.println(">>>>>>rebuild filter and wrote to builder/adguard-dnsmasq-raw.conf");
     }
-    
+
+        public static Collection<String> loadDisney() throws IOException{
+         File filter = new File("builder/disney.txt");
+        Collection<String> hosts = FileUtils.readLines(filter);
+        return hosts;
+    }
     public static Collection<String> loadYouKu() throws IOException{
          File filter = new File("builder/youku.txt");
         Collection<String> hosts = FileUtils.readLines(filter);
