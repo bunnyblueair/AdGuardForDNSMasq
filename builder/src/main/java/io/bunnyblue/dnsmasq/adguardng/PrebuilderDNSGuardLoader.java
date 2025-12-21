@@ -39,11 +39,24 @@ public List<String> rebuild(){
     } catch (IOException e) {
         throw new RuntimeException(e);
     }
+
+        public static Collection<String> disney() throws IOException{
+         File filter = new File("builder/disney.txt");
+        Collection<String> hosts = FileUtils.readLines(filter);
+        return hosts;
+    }
     try {
         purged.addAll(loadXXMaHuaTeng());
     } catch (IOException e) {
         throw new RuntimeException(e);
     }
+
+    try {
+        purged.addAll(disney());
+    } catch (IOException e) {
+        throw new RuntimeException(e);
+    }
+
     try {
         purged.addAll(loadPCDN());
     } catch (IOException e) {
