@@ -40,11 +40,7 @@ public List<String> rebuild(){
         throw new RuntimeException(e);
     }
 
-        public static Collection<String> disney() throws IOException{
-         File filter = new File("builder/disney.txt");
-        Collection<String> hosts = FileUtils.readLines(filter);
-        return hosts;
-    }
+
     try {
         purged.addAll(loadXXMaHuaTeng());
     } catch (IOException e) {
@@ -65,6 +61,13 @@ public List<String> rebuild(){
     purged.addAll(prebuild());
     return  purged;
 }
+
+            public static Collection<String> disney() throws IOException{
+         File filter = new File("builder/disney.txt");
+        Collection<String> hosts = FileUtils.readLines(filter);
+        return hosts;
+    }
+    
         public static Collection<String> loadPCDN() throws IOException{
          File filter = new File("builder/pcdn.txt");
         Collection<String> hosts = FileUtils.readLines(filter);
